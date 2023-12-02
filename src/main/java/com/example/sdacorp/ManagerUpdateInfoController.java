@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -60,7 +61,8 @@ public class ManagerUpdateInfoController implements Initializable  {
     ManagerMain.Manager manager;
 
 
-
+    String name;
+    Date dob;
 
 
 
@@ -69,8 +71,23 @@ public class ManagerUpdateInfoController implements Initializable  {
     @FXML
     void onclickupdatebtn(ActionEvent event) {
 
-        updlabel.setText("Updated");
+        String ph = manager.getContact();
+        String eemail = manager.getEmail();
+        String uname = manager.getUsername();
+        String passw = manager.getPassword();
+        String add=manager.getAddress();
+        String name = manager.getName();
+        Date dob = manager.getDob();
 
+
+
+        manager = new ManagerMain.Manager(manager_id, uname, passw, name, dob, "1", add, ph, eemail, true);
+        try {
+            managerCRUD.updateManager(manager);
+            updlabel.setText("Updated");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -136,6 +153,8 @@ public class ManagerUpdateInfoController implements Initializable  {
                 String uname = manager.getUsername();
                 String passw = manager.getPassword();
                 String add=manager.getAddress();
+                String name = manager.getName();
+                Date dob = manager.getDob();
 
                 email.setText(eemail);
                 address.setText(add);
