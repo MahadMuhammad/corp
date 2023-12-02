@@ -337,5 +337,24 @@ public class HRMain {
                 statement.executeUpdate();
             }
         }
+
+        // need to check for zero value
+        public int getHRid(String username) throws SQLException {
+            try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)) {
+                String sql = "SELECT hid FROM hr WHERE username = ?";
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setString(1, username);
+                ResultSet resultSet = statement.executeQuery();
+                if (resultSet.next()) {
+                    return resultSet.getInt("hid");
+                } else {
+                    return 0;
+                }
+            } catch (SQLException e) {
+                System.out.println("Error while getting hid: " + e.getMessage());
+                e,printStackTrace();
+                return 0;
+            }
+        }
     }
 }
