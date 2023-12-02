@@ -312,6 +312,26 @@ public class ManagerMain
                 statement.executeUpdate();
             }
         }
+
+        // need to check for zero value
+        public int getManagerId(String username) throws SQLException
+        {
+            try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)) {
+                String sql = "SELECT mid FROM manager WHERE username = ?";
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setString(1, username);
+                ResultSet resultSet = statement.executeQuery();
+                if (resultSet.next()) {
+                    int mid = resultSet.getInt("mid");
+                    return mid;
+                } else {
+                    return 0;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return 0;
+        }
     }
 
 

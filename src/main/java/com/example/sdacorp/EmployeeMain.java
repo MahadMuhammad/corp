@@ -201,6 +201,30 @@ public class EmployeeMain {
                  PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setInt(1, eid);
                 statement.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // need to check for zero value
+        public int getEmployeeId(String username) throws SQLException {
+            String sql = "SELECT eid FROM employee WHERE username = ?";
+            try (Connection connection = getConnection();
+                 PreparedStatement statement = connection.prepareStatement(sql))  {
+                statement.setString(1, username);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getInt("eid");
+                    } else {
+                        return 0;
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    return 0;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return 0;
             }
         }
     }
