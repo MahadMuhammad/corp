@@ -19,7 +19,7 @@ INSERT INTO `corp`.`employee` (`eid`, `username`, `password`, `name`, `dob`, `ad
 
 -- Manager
 CREATE TABLE `corp`.`manager` (
-                             `mid` INT NOT NULL,
+                             `mid` INT NOT NULL AUTO_INCREMENT,
                              `username` VARCHAR(45) NULL,
                              `password` VARCHAR(45) NOT NULL,
                              `name` VARCHAR(45) NULL,
@@ -38,7 +38,7 @@ UPDATE `corp`.`manager` SET `room_no` = '1' WHERE (`mid` = '1');
 
 -- HR
 CREATE TABLE `corp`.`hr` (
-                             `hid` INT NOT NULL,
+                             `hid` INT NOT NULL AUTO_INCREMENT,
                              `username` VARCHAR(45) NULL,
                              `password` VARCHAR(45) NOT NULL,
                              `name` VARCHAR(45) NULL,
@@ -58,7 +58,7 @@ UPDATE `corp`.`hr` SET `room_no` = '1', `no_of_hiring` = '1' WHERE (`hid` = '1')
 
 -- Employee Salary
 CREATE TABLE `corp`.`employee_salary` (
-                                          `eid` INT NOT NULL,
+                                          `eid` INT NOT NULL ,
                                           `base_salary` DECIMAL NULL,
                                           `bonus` DECIMAL NULL,
                                           `fine` DECIMAL NULL,
@@ -103,7 +103,7 @@ INSERT INTO `corp`.`hr_salary` (`hid`, `base_salary`, `bonus`, `fine`) VALUES ('
 -- Project
 CREATE TABLE `corp`.`project`
 (
-    `pid`         INT         NOT NULL,
+    `pid`         INT         NOT NULL AUTO_INCREMENT,
     `name`        VARCHAR(45) NULL,
     `description` VARCHAR(45) NULL,
     `status`      VARCHAR(45) NULL,
@@ -166,7 +166,7 @@ CREATE TABLE `corp`.`hr_attendence` (
 
 -- form
 CREATE TABLE `corp`.`form` (
-                               `fid` INT NOT NULL,
+                               `fid` INT NOT NULL AUTO_INCREMENT,
                                `fname` VARCHAR(45) NULL,
                                `description` VARCHAR(45) NULL,
                                `type` VARCHAR(10) NULL,
@@ -193,7 +193,7 @@ ALTER TABLE `corp`.`form`
 
 -- Review
 CREATE TABLE `corp`.`review` (
-                                 `mid` INT NOT NULL,
+                                 `mid` INT NOT NULL AUTO_INCREMENT,
                                  `eid` INT NULL,
                                  `pid` INT NULL,
                                  PRIMARY KEY (`mid`),
