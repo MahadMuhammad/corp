@@ -59,7 +59,26 @@ public class HRUpdateInfoController implements Initializable {
     @FXML
     void onclickupdatebtn() {
 
-        updlabel.setText("UPDATED");
+
+        hr = new HRMain.HR(
+                HR_id, username.getText(),
+                password.getText(),
+                hr.getName(),
+                hr.getDob(),
+                "HRroom",
+                0,
+                address.getText(),
+                contact.getText(),
+                email.getText(),
+                true
+        );
+        try {
+            hrCRUD.updateHR(hr);
+            updlabel.setText("UPDATED");
+        } catch (SQLException e) {
+            updlabel.setText("NOT UPDATED");
+            e.printStackTrace();
+        }
 
     }
 
