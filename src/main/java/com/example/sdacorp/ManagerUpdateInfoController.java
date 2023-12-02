@@ -71,17 +71,10 @@ public class ManagerUpdateInfoController implements Initializable  {
     @FXML
     void onclickupdatebtn(ActionEvent event) {
 
-        String ph = manager.getContact();
-        String eemail = manager.getEmail();
-        String uname = manager.getUsername();
-        String passw = manager.getPassword();
-        String add=manager.getAddress();
         String name = manager.getName();
         Date dob = manager.getDob();
-
-
-
-        manager = new ManagerMain.Manager(manager_id, uname, passw, name, dob, "1", add, ph, eemail, true);
+        
+        manager = new ManagerMain.Manager(manager_id, username.getText(), password.getText(), name, dob, "1", address.getText(), contact.getText(), email.getText(), true);
         try {
             managerCRUD.updateManager(manager);
             updlabel.setText("Updated");
