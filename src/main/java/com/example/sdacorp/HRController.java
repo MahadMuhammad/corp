@@ -15,6 +15,9 @@ import java.sql.SQLException;
 public class HRController {
 
     @FXML
+    private Label forclosing;
+
+    @FXML
     private Label hrname;
 
     @FXML
@@ -74,6 +77,7 @@ public class HRController {
     void onclickrgistrationbtn() throws IOException {
 
             hrModel.hr_registrationpage(new Stage());
+            close_stage();
 
     }
 
@@ -81,5 +85,12 @@ public class HRController {
     void onclickupdateinfobtn() throws IOException {
 
             hrModel.hr_updateinfopage(new Stage());
+            close_stage();
+    }
+
+    public void close_stage()
+    {
+        Stage closestage = (Stage) forclosing.getScene().getWindow();
+        closestage.close();
     }
 }

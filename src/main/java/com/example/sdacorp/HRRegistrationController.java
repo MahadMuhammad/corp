@@ -13,6 +13,9 @@ import java.io.IOException;
 public class HRRegistrationController {
 
     @FXML
+    private Label forclosing;
+
+    @FXML
     private TextField add;
 
     @FXML
@@ -56,6 +59,7 @@ public class HRRegistrationController {
     void onclickrgistrationbtn(ActionEvent event) throws IOException {
 
         hrModel.hr_registrationpage(new Stage());
+        close_stage();
 
 
     }
@@ -64,8 +68,15 @@ public class HRRegistrationController {
     void onclickupdateinfobtn(ActionEvent event) throws IOException {
 
         hrModel.hr_updateinfopage(new Stage());
+        close_stage();
 
 
+    }
+
+    public void close_stage()
+    {
+        Stage closestage = (Stage) forclosing.getScene().getWindow();
+        closestage.close();
     }
 
 

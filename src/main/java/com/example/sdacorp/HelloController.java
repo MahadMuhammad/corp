@@ -92,6 +92,7 @@ public class HelloController {
                 if (countHR == 1 && Objects.equals(rank.getValue(), "HR")) {
 
                     hrId = queryResultHR.getInt("hid");
+                    accessID.setHRId(hrId);
                     hrController.sethr_id(hrId);
                     hrController.HRpage(new Stage());
 
