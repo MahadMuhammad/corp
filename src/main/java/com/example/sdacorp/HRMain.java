@@ -352,7 +352,7 @@ public class HRMain {
                 }
             } catch (SQLException e) {
                 System.out.println("Error while getting hid: " + e.getMessage());
-                e,printStackTrace();
+                e.printStackTrace();
                 return 0;
             }
         }

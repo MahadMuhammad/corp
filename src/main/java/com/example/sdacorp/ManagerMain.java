@@ -262,8 +262,7 @@ public class ManagerMain
             }
         }
 
-        public Manager getManager(int mid) throws SQLException
-        {
+        public Manager getManager(int mid) throws SQLException {
             try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)) {
                 String sql = "SELECT * FROM manager WHERE mid = ?";
                 PreparedStatement statement = connection.prepareStatement(sql);
@@ -314,8 +313,7 @@ public class ManagerMain
         }
 
         // need to check for zero value
-        public int getManagerId(String username) throws SQLException
-        {
+        public int getManagerId(String username) throws SQLException {
             try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)) {
                 String sql = "SELECT mid FROM manager WHERE username = ?";
                 PreparedStatement statement = connection.prepareStatement(sql);
@@ -330,7 +328,9 @@ public class ManagerMain
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            return 0;
         }
+
     }
 
 
