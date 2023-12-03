@@ -190,6 +190,28 @@ ALTER TABLE `corp`.`form`
             ON DELETE CASCADE
             ON UPDATE CASCADE;
 
+-- complain table
+CREATE TABLE `corp`.`complain` (
+  `cid` INT NOT NULL AUTO_INCREMENT,
+  `cname` VARCHAR(45) NULL,
+  `description` VARCHAR(45) NULL,
+  `eid` INT NULL,
+  `mid` INT NULL,
+  `isaccepted` TINYINT NULL,
+  PRIMARY KEY (`cid`),
+  UNIQUE INDEX `cid_UNIQUE` (`cid` ASC) VISIBLE,
+  INDEX `complain_emp_fk_idx` (`eid` ASC) VISIBLE,
+  INDEX `complain_man_fk_idx` (`mid` ASC) VISIBLE,
+  CONSTRAINT `complain_emp_fk`
+    FOREIGN KEY (`eid`)
+    REFERENCES `corp`.`employee` (`eid`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `complain_man_fk`
+    FOREIGN KEY (`mid`)
+    REFERENCES `corp`.`manager` (`mid`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 -- Review
 CREATE TABLE `corp`.`review` (
@@ -218,6 +240,31 @@ ALTER TABLE `corp`.`review`
             REFERENCES `corp`.`employee` (`eid`)
             ON DELETE CASCADE
             ON UPDATE CASCADE;
+
+-- rating
+CREATE TABLE `corp`.`rating` (
+                                 `rid` INT NOT NULL AUTO_INCREMENT,
+                                 `mid` INT NULL,
+                                 `eid` INT NULL,
+                                 `pid` INT NULL,
+                                 `rating` INT NULL,
+                                 PRIMARY KEY (`rid`),
+                                 CONSTRAINT `rating_mid_fk`
+                                     FOREIGN KEY (`mid`)
+                                         REFERENCES `corp`.`manager` (`mid`)
+                                         ON DELETE CASCADE
+                                         ON UPDATE CASCADE,
+                                 CONSTRAINT `rating_eid_fk`
+                                     FOREIGN KEY (`eid`)
+                                         REFERENCES `corp`.`employee` (`eid`)
+                                         ON DELETE CASCADE
+                                         ON UPDATE CASCADE,
+                                 CONSTRAINT `rating_pid_fk`
+                                     FOREIGN KEY (`pid`)
+                                         REFERENCES `corp`.`project` (`pid`)
+                                         ON DELETE CASCADE
+                                         ON UPDATE CASCADE
+);
 
 -- Employee
 INSERT INTO `corp`.`employee` (`eid`, `username`, `password`, `name`, `dob`, `address`, `contact`, `email`, `isavailable`) 
@@ -296,3 +343,14 @@ INSERT INTO `corp`.`review` (`mid`, `eid`, `pid`) VALUES ('2', '2', '1');
 INSERT INTO `corp`.`review` (`mid`, `eid`, `pid`) VALUES ('3', '3', '2');
 INSERT INTO `corp`.`review` (`mid`, `eid`, `pid`) VALUES ('4', '4', '3');
 
+-- Complain
+INSERT INTO `corp`.`complain` (`cid`, `cname`, `description`, `eid`, `mid`, `isaccepted`) VALUES ('1', 'Complain 1', 'Complain 1 Description', '1', '1', '1');
+INSERT INTO `corp`.`complain` (`cid`, `cname`, `description`, `eid`, `mid`, `isaccepted`) VALUES ('2', 'Complain 2', 'Complain 2 Description', '2', '2', '1');
+INSERT INTO `corp`.`complain` (`cid`, `cname`, `description`, `eid`, `mid`, `isaccepted`) VALUES ('3', 'Complain 3', 'Complain 3 Description', '3', '3', '1');
+INSERT INTO `corp`.`complain` (`cid`, `cname`, `description`, `eid`, `mid`, `isaccepted`) VALUES ('4', 'Complain 4', 'Complain 4 Description', '2', '1', '1');
+
+-- Rating
+INSERT INTO `corp`.`rating` (`rid`, `mid`, `eid`, `pid`, `rating`) VALUES ('1', '2', '2', '1', '9');
+INSERT INTO `corp`.`rating` (`rid`, `mid`, `eid`, `pid`, `rating`) VALUES ('2', '1', '3', '2', '8');
+INSERT INTO `corp`.`rating` (`rid`, `mid`, `eid`, `pid`, `rating`) VALUES ('3', '3', '1', '3', '6');
+INSERT INTO `corp`.`rating` (`rid`, `mid`, `eid`, `pid`, `rating`) VALUES ('4', '2', '2', '1', '9');
