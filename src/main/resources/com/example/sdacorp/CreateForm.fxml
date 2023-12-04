@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sdacorp.EmployeeController">
+    <children>
+        <Pane prefHeight="568.0" prefWidth="270.0" style="-fx-background-color: #008080;">
+            <children>
+                <Button layoutX="6.0" layoutY="438.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="222.0" text="Create a Form">
+                    <font>
+                        <Font name="Helvetica Neue Bold Italic" size="18.0" />
+                    </font>
+                </Button>
+                <Group layoutX="7.0" layoutY="471.0" />
+                <Group layoutX="14.0" layoutY="522.0" />
+                <ImageView fitHeight="151.0" fitWidth="154.0" layoutX="41.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@logos-imgs/Employee1.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="32.0" layoutY="195.0" text="Employee">
+                    <font>
+                        <Font name="Helvetica Neue Bold Italic" size="40.0" />
+                    </font>
+                </Label>
+                <Button layoutX="9.0" layoutY="312.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" text="Veiw Projects">
+                    <font>
+                        <Font name="Helvetica Neue Bold Italic" size="18.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="37.0" fitWidth="31.0" layoutX="14.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@logos-imgs/administrator-developer-icon.png" />
+                    </image>
+                </ImageView>
+                <Group layoutX="14.0" layoutY="341.0" />
+                <Group layoutX="9.0" layoutY="403.0">
+                    <children>
+                        <Group layoutX="-7.0" layoutY="11.0" />
+                    </children>
+                </Group>
+                <Group layoutX="14.0" layoutY="470.0" />
+                <ImageView fitHeight="38.0" fitWidth="31.0" layoutX="13.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@logos-imgs/pencil-square-outline-icon.png" />
+                    </image>
+                </ImageView>
+                  <Button layoutX="5.0" layoutY="488.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" text="Notification">
+                      <font>
+                          <Font name="Helvetica Neue Bold Italic" size="18.0" />
+                      </font>
+                  </Button>
+                  <ImageView fitHeight="37.0" fitWidth="39.0" layoutX="13.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@logos-imgs/notification-alarm-buzzer-icon.png" />
+                      </image>
+                  </ImageView>
+                  <Button layoutY="367.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="255.0" text="Update Information">
+                      <font>
+                          <Font name="Helvetica Neue Bold Italic" size="18.0" />
+                      </font>
+                  </Button>
+                  <ImageView fitHeight="62.0" fitWidth="31.0" layoutX="13.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@logos-imgs/faster-arrow-top-bottom-icon.png" />
+                      </image>
+                  </ImageView>
+            <Button layoutX="-11.0" layoutY="256.0" mnemonicParsing="false" onAction="#OnClickHomeBtn" prefHeight="56.0" prefWidth="216.0" text="HOME">
+               <font>
+                  <Font name="Helvetica Neue Bold Italic" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="37.0" fitWidth="31.0" layoutX="14.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logos-imgs/home.png" />
+               </image>
+            </ImageView>
+            </children>
+        </Pane>
+        <Label layoutX="282.0" layoutY="30.0" prefHeight="37.0" prefWidth="391.0" text="Create a Form" textAlignment="CENTER">
+            <font>
+                <Font name="Helvetica Neue Bold Italic" size="36.0" />
+            </font>
+        </Label>
+        <Label layoutX="282.0" layoutY="106.0" text="Form ID">
+            <font>
+                <Font name="Helvetica Neue Bold Italic" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="282.0" layoutY="165.0" text="Form Name">
+            <font>
+                <Font name="Helvetica Neue Bold Italic" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="282.0" layoutY="234.0" text="Type">
+            <font>
+                <Font name="Helvetica Neue Bold Italic" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="284.0" layoutY="295.0" text="Description">
+            <font>
+                <Font name="Helvetica Neue Bold Italic" size="24.0" />
+            </font>
+        </Label>
+      <Button layoutX="464.0" layoutY="502.0" mnemonicParsing="false" onAction="#OncClickCreateFormBtn" prefHeight="56.0" prefWidth="125.0" text="Create">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField alignment="TOP_LEFT" layoutX="440.0" layoutY="111.0" prefHeight="27.0" prefWidth="138.0" />
+      <TextField alignment="TOP_LEFT" layoutX="440.0" layoutY="170.0" prefHeight="27.0" prefWidth="369.0" />
+      <TextField alignment="TOP_LEFT" layoutX="445.0" layoutY="239.0" prefHeight="27.0" prefWidth="369.0" />
+      <TextField alignment="TOP_LEFT" layoutX="451.0" layoutY="299.0" prefHeight="170.0" prefWidth="369.0" />
+    </children>
+</Pane>

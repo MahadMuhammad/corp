@@ -1,15 +1,20 @@
 package com.example.sdacorp;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class EmployeeController {
+
+public class EmployeeController implements Initializable {
 
     @FXML
     private Label emp_add;
@@ -24,6 +29,9 @@ public class EmployeeController {
     private Label emp_phone;
 
     private int employee_id;
+
+    @FXML
+    private Label forclosing;
 
     public void setemployee_id(int id) {
         employee_id = id;
@@ -64,4 +72,74 @@ public class EmployeeController {
     }
 
 
-}
+        EmployeeModel EmployeeModel = new EmployeeModel();
+
+        //AccessID accessID=new AccessID();
+
+
+    //private int employee_id= employeeCRUD.getEmployeeId();
+
+
+        @Override
+        public void initialize(URL location, ResourceBundle resources)   {
+
+            try {
+
+                employee = employeeCRUD.getEmployee(employee_id);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
+        }
+
+        @FXML
+        void onClickHomebtn(ActionEvent event) throws IOException {
+
+            EmployeeModel.employee_home_page(new Stage());
+            close_stage();
+
+        }
+
+
+
+//        @FXML
+//        void OnClickViewProjectBtn(ActionEvent event)throws IOException {
+//
+//            EmployeeModel.employee_view_projects(new Stage());
+//            close_stage();
+//        }
+//
+//        @FXML
+//        void OnClickUpdateInfoBtn(ActionEvent event)throws IOException {
+//
+//            EmployeeModel.employee_Update_Info_page(new Stage());
+//            close_stage();
+//
+//        }
+
+
+
+        @FXML
+        void OncClickCreateFormBtn(ActionEvent event) throws IOException {
+
+            EmployeeModel.employee_create_form(new Stage());
+            close_stage();
+
+        }
+
+
+//        @FXML
+//        void OncClickCreateNotificationBtn(ActionEvent event) throws IOException {
+//
+//        EmployeeModel.employee_Notification(new Stage());
+//        close_stage();
+//
+//        }
+        public void close_stage()
+        {
+            Stage closestage = (Stage) forclosing.getScene().getWindow();
+            closestage.close();
+        }
+
+    }
