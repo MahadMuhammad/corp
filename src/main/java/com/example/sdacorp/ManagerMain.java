@@ -155,6 +155,18 @@ public class ManagerMain
             this.isAvailable = isAvailable;
         }
 
+        public Manager( String username, String password, String name, Date dob, String roomNo, String address, String contact, String email, boolean isAvailable) {
+            this.username = username;
+            this.password = password;
+            this.name = name;
+            this.dob = dob;
+            this.roomNo = roomNo;
+            this.address = address;
+            this.contact = contact;
+            this.email = email;
+            this.isAvailable = isAvailable;
+        }
+
         public int getMid() {
             return mid;
         }

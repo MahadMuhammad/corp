@@ -169,6 +169,19 @@ public class HRMain {
             this.isAvailable = isAvailable;
         }
 
+        public HR( String username, String password, String name, Date dob, String roomNo, int noOfHiring, String address, String contact, String email, boolean isAvailable) {
+            this.username = username;
+            this.password = password;
+            this.name = name;
+            this.dob = dob;
+            this.roomNo = roomNo;
+            this.noOfHiring = noOfHiring;
+            this.address = address;
+            this.contact = contact;
+            this.email = email;
+            this.isAvailable = isAvailable;
+        }
+
         // Getters and Setters
         public int getHid() {
             return hid;

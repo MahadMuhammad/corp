@@ -53,6 +53,9 @@ public class HRCreateAccountController {
     ManagerMain.ManagerCRUD managerCRUD= new ManagerMain.ManagerCRUD();
     ManagerMain.Manager manager;
 
+    HRMain.HRCRUD hrCRUD = new HRMain.HRCRUD();
+    HRMain.HR hr;
+
 
 
 
@@ -72,13 +75,51 @@ public class HRCreateAccountController {
         }
         else if(Objects.equals(CreateFor.getValue(), "Manager"))
         {
-            setlabel_registration.setText("Select Create For");
+            create_manager();
+        } else if (Objects.equals(CreateFor.getValue(), "HR"))
+        {
+            create_hr();
+        } else {
+            setlabel_registration.setText("Select an option");
         }
 
 
 
     }
+    void create_hr(){
+        String hr_name = name.getText();
+        String hr_address = address.getText();
+        String hr_contact = contact.getText();
+        Date hr_dob = Date.valueOf(dob.getValue().toString());
+        String hr_email = email.getText();
+        String hr_username = username.getText();
+        String hr_password = password.getText();
 
+        hr = new HRMain.HR(hr_username, hr_password, hr_name,hr_dob, "1",1, hr_address, hr_contact, hr_email, true);
+        try {
+            hrCRUD.addHR(hr);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        setlabel_registration.setText("HR Created Successfully");
+    }
+    void create_manager(){
+        String manager_name = name.getText();
+        String manager_address = address.getText();
+        String manager_contact = contact.getText();
+        Date manager_dob = Date.valueOf(dob.getValue().toString());
+        String manager_email = email.getText();
+        String manager_username = username.getText();
+        String manager_password = password.getText();
+
+        manager = new ManagerMain.Manager(manager_username, manager_password, manager_name,manager_dob, "1", manager_address, manager_contact, manager_email, true);
+        try {
+            managerCRUD.addManager(manager);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        setlabel_registration.setText("Manager Created Successfully");
+    }
 
     @FXML
     void OnClickCreateAccount(ActionEvent event) throws IOException{
