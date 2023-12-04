@@ -32,6 +32,32 @@ public class HRModel {
     }
 
 
+    public void hr_Homepage(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HR.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        stage.setResizable(false);
+        stage.setTitle("HR Page");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+
+    public void hr_CreateAccountPage(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HRCreateAccount.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        stage.setResizable(false);
+        stage.setTitle("Create Account");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+
+
+
 
 
 

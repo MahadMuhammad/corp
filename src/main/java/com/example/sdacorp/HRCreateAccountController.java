@@ -8,12 +8,14 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.scene.control.ComboBox;
 
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.Objects;
 
-public class HRRegistrationController {
+public class HRCreateAccountController {
 
     @FXML
     private Label forclosing;
@@ -42,46 +44,50 @@ public class HRRegistrationController {
     @FXML
     private TextField username;
 
+    @FXML
+    private ComboBox<?> CreateFor;
+
     HRModel hrModel = new HRModel();
 
 
+    ManagerMain.ManagerCRUD managerCRUD= new ManagerMain.ManagerCRUD();
+    ManagerMain.Manager manager;
 
-    EmployeeMain.EmployeeCRUD employeeCRUD = new EmployeeMain.EmployeeCRUD();
-    EmployeeMain.Employee employee;
+
+
+
+
 
 
 
     @FXML
-    void onclickregisterbtn(ActionEvent event) {
+    void OnClickCreateBtn(ActionEvent event) {
 
-        Date employee_dob = Date.valueOf(dob.getValue().toString());
 
         if(username.getText().isBlank() || address.getText().isBlank() || contact.getText().isBlank() ||dob == null || email.getText().isBlank()
-        || name.getText().isBlank() || password.getText().isBlank() )
+                || name.getText().isBlank() || password.getText().isBlank() )
         {
             setlabel_registration.setText("Fill all the fields");
             return;
-        } else {
-            employee = new EmployeeMain.Employee(
-                    username.getText(),
-                    password.getText(),
-                    name.getText(),
-                    employee_dob,
-                    address.getText(),
-                    contact.getText(),
-                    email.getText(),
-                    false
-                    );
-            try {
-                employeeCRUD.addEmployee(employee);
-                setlabel_registration.setText("Employee Registered Successfully");
-            } catch (SQLException e) {
-                setlabel_registration.setText("Employee Registration Failed");
-                e.printStackTrace();
-            }
+        }
+        else if(Objects.equals(CreateFor.getValue(), "Manager"))
+        {
+            setlabel_registration.setText("Select Create For");
         }
 
+
+
     }
+
+
+    @FXML
+    void OnClickCreateAccount(ActionEvent event) throws IOException{
+
+        hrModel.hr_CreateAccountPage(new Stage());
+        close_stage();
+
+    }
+
 
     @FXML
     void onclickrgistrationbtn(ActionEvent event) throws IOException {
@@ -105,14 +111,6 @@ public class HRRegistrationController {
     void OnClickHomeBtn(ActionEvent event)throws IOException {
 
         hrModel.hr_Homepage(new Stage());
-        close_stage();
-
-    }
-
-    @FXML
-    void OnClickCreateAccount(ActionEvent event) throws IOException{
-
-        hrModel.hr_CreateAccountPage(new Stage());
         close_stage();
 
     }

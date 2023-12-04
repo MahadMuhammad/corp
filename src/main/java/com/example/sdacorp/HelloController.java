@@ -32,8 +32,7 @@ public class HelloController {
     @FXML
     private Button loginbtn;
 
-    private HRController hrController = new HRController();
-
+    private HRModel hrModel = new HRModel();
     private ManagerController  managerController = new ManagerController();
 
     private EmployeeController employeeController = new EmployeeController();
@@ -93,8 +92,8 @@ public class HelloController {
 
                     hrId = queryResultHR.getInt("hid");
                     accessID.setHRId(hrId);
-                    hrController.sethr_id(hrId);
-                    hrController.HRpage(new Stage());
+                    hrModel.hr_Homepage(new Stage());
+
 
                     close_stage();
                 } else if (countManager == 1 && Objects.equals(rank.getValue(), "Manager")) {

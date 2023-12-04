@@ -43,6 +43,7 @@ public class HRUpdateInfoController implements Initializable {
     private Label forclosing;
 
 
+
     AccessID accessID=new AccessID();
 
     int HR_id = accessID.getHRId();
@@ -98,6 +99,23 @@ public class HRUpdateInfoController implements Initializable {
         close_stage();
 
     }
+
+    @FXML
+    void OnClickHomeBtn(ActionEvent event)throws IOException {
+
+        hrModel.hr_Homepage(new Stage());
+        close_stage();
+
+    }
+
+    @FXML
+    void OnClickCreateAccount(ActionEvent event) throws IOException{
+
+        hrModel.hr_CreateAccountPage(new Stage());
+        close_stage();
+
+    }
+
 
     public void close_stage()
     {

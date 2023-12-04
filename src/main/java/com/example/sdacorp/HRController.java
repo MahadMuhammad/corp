@@ -2,6 +2,7 @@ package com.example.sdacorp;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
@@ -9,10 +10,12 @@ import javafx.scene.Scene;
 
 import java.io.IOException;
 
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 
-public class HRController {
+public class HRController implements Initializable {
 
     @FXML
     private Label forclosing;
@@ -31,46 +34,43 @@ public class HRController {
 
     HRModel hrModel=new HRModel();
 
-    private int hr_id;
 
-    public void sethr_id(int id) {
-        hr_id = id;
-    }
+    AccessID accessID=new AccessID();
+
+    int HR_id = accessID.getHRId();
+
+
 
     HRMain.HRCRUD hrCRUD = new HRMain.HRCRUD();
     HRMain.HR hr;
 
-    public void HRpage(Stage stage) throws IOException {
 
-        // Fetch HR information here, just before displaying the scene
+
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources)   {
+
         try {
-            hr = hrCRUD.getHR(hr_id);
+
+            hr = hrCRUD.getHR(HR_id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HR.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-
-        // Access the HRController instance associated with the loaded FXML
-        HRController hrController = fxmlLoader.getController();
 
         String name = hr.getName();
         String address = hr.getAddress();
         String ph = hr.getContact();
         String email = hr.getEmail();
 
-        hrController.hrname.setText(name);
-        hrController.hraddress.setText(address);
-        hrController.hrphone.setText(ph);
-        hrController.hremail.setText(email);
+        hrname.setText(name);
+        hraddress.setText(address);
+        hrphone.setText(ph);
+        hremail.setText(email);
 
-        // Set up the stage
-        stage.setResizable(false);
-        stage.setTitle("HR Page");
-        stage.setScene(scene);
-        stage.show();
+
     }
+
 
 
     @FXML
@@ -86,6 +86,14 @@ public class HRController {
 
             hrModel.hr_updateinfopage(new Stage());
             close_stage();
+    }
+
+    @FXML
+    void OnClickCreateAccount(ActionEvent event) throws IOException{
+
+        hrModel.hr_CreateAccountPage(new Stage());
+        close_stage();
+
     }
 
     public void close_stage()
