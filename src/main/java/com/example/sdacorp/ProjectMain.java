@@ -1,6 +1,10 @@
 package com.example.sdacorp;
 
+import javafx.util.Pair;
+
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.sql.SQLException;
 import java.sql.Date;
@@ -258,6 +262,25 @@ public class ProjectMain {
                 statement.executeUpdate();
             } catch (SQLException e) {
                 e.printStackTrace();
+            }
+        }
+
+        // return all project pid and name
+        public List<Pair<Integer, String>> getAllProject() throws SQLException {
+            try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)) {
+                String sql = "SELECT pid, name FROM project";
+                PreparedStatement statement = connection.prepareStatement(sql);
+                ResultSet resultSet = statement.executeQuery();
+                List<Pair<Integer, String>> projectList = new ArrayList<>();
+                while (resultSet.next()) {
+                    int pid = resultSet.getInt("pid");
+                    String name = resultSet.getString("name");
+                    projectList.add(new Pair<>(pid, name));
+                }
+                return projectList;
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return null;
             }
         }
     }
