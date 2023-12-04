@@ -264,6 +264,17 @@ public class EmployeeMain {
             this.isAvailable = isAvailable;
         }
 
+        public Employee(int eid, String username, String password, String name, java.sql.Date dob,  String address, String contact, String email, boolean isAvailable) {
+            this.eid = eid;
+            this.username = username;
+            this.password = password;
+            this.name = name;
+            this.dob = dob;
+            this.address = address;
+            this.contact = contact;
+            this.email = email;
+            this.isAvailable = isAvailable;
+        }
 
 
         // Getters and setters for each variable

@@ -7,6 +7,12 @@ public class AccessID {
 
     private static int HRId;
 
+
+    private static int EmployeeId;
+
+
+
+
     public static int getManagerId() {
         return managerId;
     }
@@ -23,5 +29,15 @@ public class AccessID {
     public static void setHRId(int id)
     {
         HRId=id;
+    }
+
+    public static int getEmployeeId()
+    {
+        return EmployeeId;
+    }
+
+    public static void setEmployeeId(int id)
+    {
+        EmployeeId=id;
     }
 }

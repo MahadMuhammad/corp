@@ -1,15 +1,17 @@
 package com.example.sdacorp;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class EmployeeController {
+public class EmployeeController  implements Initializable {
 
     @FXML
     private Label emp_add;
@@ -23,45 +25,92 @@ public class EmployeeController {
     @FXML
     private Label emp_phone;
 
-    private int employee_id;
+    @FXML
+    private Label forclosing;
 
-    public void setemployee_id(int id) {
-        employee_id = id;
-    }
+
+    EmployeeModel employeeModel = new EmployeeModel();
+
+
+    AccessID accessID=new AccessID();
+
+    int employee_id = accessID.getEmployeeId();
+
+
 
     EmployeeMain.EmployeeCRUD employeeCRUD = new EmployeeMain.EmployeeCRUD();
     EmployeeMain.Employee employee;
 
-    public void Employerpage(Stage stage) throws IOException {
-        // Fetch HR information here, just before displaying the scene
+
+
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources)   {
+
         try {
+
             employee = employeeCRUD.getEmployee(employee_id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Emp.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-
-        // Access the HRController instance associated with the loaded FXML
-        EmployeeController employeeController = fxmlLoader.getController();
 
         String name = employee.getName();
         String address = employee.getAddress();
         String ph = employee.getContact();
         String email = employee.getEmail();
 
-        employeeController.emp_name.setText(name);
-        employeeController.emp_add.setText(address);
-        employeeController.emp_phone.setText(ph);
-        employeeController.emp_email.setText(email);
+        emp_name.setText(name);
+        emp_add.setText(address);
+        emp_phone.setText(ph);
+        emp_email.setText(email);
 
-        // Set up the stage
-        stage.setResizable(false);
-        stage.setTitle("Employee Page");
-        stage.setScene(scene);
-        stage.show();
+
     }
 
+
+    @FXML
+    void ONClickReportAComplainBtn(ActionEvent event) throws IOException {
+
+        employeeModel.Employee_Report_a_Complaint_page(new Stage());
+        close_stage();
+
+    }
+
+    @FXML
+    void OnClickCreateAFormBtn(ActionEvent event)throws IOException {
+
+        employeeModel.Employee_Create_a_Form_page(new Stage());
+        close_stage();
+
+    }
+
+    @FXML
+    void OnClickHomeBtn(ActionEvent event) throws IOException {
+
+        employeeModel.Employee_Homepage(new Stage());
+        close_stage();
+
+    }
+
+    @FXML
+    void OnClickUpdateInfoBtn(ActionEvent event) throws IOException {
+
+        employeeModel.Employee_Update_Info_Page(new Stage());
+        close_stage();
+
+    }
+
+    @FXML
+    void OnclickSubmitReportBtn(ActionEvent event) throws IOException{
+        employeeModel.Employee_Submit_a_Report_page(new Stage());
+
+    }
+
+    public void close_stage()
+    {
+        Stage closestage = (Stage) forclosing.getScene().getWindow();
+        closestage.close();
+    }
 
 }

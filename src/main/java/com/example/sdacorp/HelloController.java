@@ -36,7 +36,7 @@ public class HelloController {
 
     private ManagerModel managerModel = new ManagerModel();
 
-    private EmployeeController employeeController = new EmployeeController();
+    private EmployeeModel employeeModel = new EmployeeModel();
 
     private AccessID accessID = new AccessID();
 
@@ -107,8 +107,9 @@ public class HelloController {
 
                 } else if (countEmployee == 1 && Objects.equals(rank.getValue(), "Employee")) {
                     employeeId = queryResultEmployee.getInt("eid");
-                    employeeController.setemployee_id(employeeId);
-                    employeeController.Employerpage(new Stage());
+                    accessID.setEmployeeId(employeeId);
+                    employeeModel.Employee_Homepage(new Stage());
+
 
                     close_stage();
                 } else {
