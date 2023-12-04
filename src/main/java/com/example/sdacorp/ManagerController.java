@@ -105,6 +105,12 @@ public class ManagerController implements Initializable {
 
     }
 
+    @FXML
+    void OnClickManageProjectBtn(ActionEvent event)  throws IOException{
+        managerModel.manager_manage_project(new Stage());
+        close_stage();
+    }
+
     public void close_stage()
     {
         Stage closestage = (Stage) forclosing.getScene().getWindow();

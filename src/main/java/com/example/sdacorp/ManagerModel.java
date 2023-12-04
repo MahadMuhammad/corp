@@ -24,6 +24,17 @@ public class ManagerModel  {
         stage.show();
     }
 
+    public void manager_manage_project(Stage stage) throws IOException {
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ManagerManageProject.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setResizable(false);
+        stage.setTitle("Manage Project");
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
 
 

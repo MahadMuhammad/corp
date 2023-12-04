@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
+import javafx.scene.control.TableColumn;
 
 import java.io.IOException;
 import java.sql.Date;
