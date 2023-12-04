@@ -1,15 +1,20 @@
 package com.example.sdacorp;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
 public class EmployeeController {
+
+    EmployeeModel employeemodel = new EmployeeModel();
 
     @FXML
     private Label emp_add;
@@ -24,6 +29,9 @@ public class EmployeeController {
     private Label emp_phone;
 
     private int employee_id;
+
+    @FXML
+    private Button forclosing;
 
     public void setemployee_id(int id) {
         employee_id = id;
@@ -63,5 +71,15 @@ public class EmployeeController {
         stage.show();
     }
 
+    @FXML
+    void OnClickUpdateInfoBtn(ActionEvent event) throws IOException {
+        employeemodel.employee_Update_Info_page(new Stage());
+        close_stage();
+    }
 
+    public void close_stage()
+    {
+        Stage closestage = (Stage) forclosing.getScene().getWindow();
+        closestage.close();
+    }
 }
