@@ -17,7 +17,8 @@ public class ManagerCreateProjectController {
 
 
     @FXML
-    private Button forclosing;
+    private Label forclosing;
+
 
     @FXML
     private DatePicker pdeadline;
@@ -65,6 +66,15 @@ public class ManagerCreateProjectController {
             }
     }
 
+
+    @FXML
+    void OnClickHomeBtn(ActionEvent event) throws IOException {
+
+        managerModel.manager_home_page(new Stage());
+        close_stage();
+
+    }
+
     @FXML
     void OnClickCreateProjectBtn(ActionEvent event)throws IOException {
 
@@ -85,13 +95,7 @@ public class ManagerCreateProjectController {
 
     }
 
-    @FXML
-    void OnClickVeiwEmployees(ActionEvent event) throws IOException{
-        managerModel.manager_View_Employee_page(new Stage());
-        close_stage();
 
-
-    }
 
     @FXML
     void OncClickCloseProjectBtn(ActionEvent event) throws IOException{

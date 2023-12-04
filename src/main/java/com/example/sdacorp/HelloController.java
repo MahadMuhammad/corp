@@ -33,7 +33,8 @@ public class HelloController {
     private Button loginbtn;
 
     private HRModel hrModel = new HRModel();
-    private ManagerController  managerController = new ManagerController();
+
+    private ManagerModel managerModel = new ManagerModel();
 
     private EmployeeController employeeController = new EmployeeController();
 
@@ -100,8 +101,7 @@ public class HelloController {
 
                     managerId = queryResultManager.getInt("mid");
                     accessID.setManagerId(managerId);
-                    managerController.setmanager_id(managerId);
-                    managerController.Managerpage(new Stage());
+                    managerModel.manager_home_page(new Stage());
 
                     close_stage();;
 

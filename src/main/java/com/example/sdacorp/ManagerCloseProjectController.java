@@ -4,15 +4,26 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
+
 
 import java.io.IOException;
 
 public class ManagerCloseProjectController {
 
     @FXML
-    private Button forclosing;
+    private Label forclosing;
 
     ManagerModel managerModel = new ManagerModel();
+
+
+    @FXML
+    void OnClickHomeBtn(ActionEvent event) throws IOException {
+
+        managerModel.manager_home_page(new Stage());
+        close_stage();
+
+    }
 
 
     @FXML
@@ -33,15 +44,6 @@ public class ManagerCloseProjectController {
 
     }
 
-    @FXML
-    void OnClickVeiwEmployees(ActionEvent event)throws IOException {
-
-        managerModel.manager_View_Employee_page(new Stage());
-
-        close_stage();
-
-
-    }
 
     @FXML
     void OncClickCloseProjectBtn(ActionEvent event) throws IOException{
