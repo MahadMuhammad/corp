@@ -34,3 +34,10 @@
 
 }
 
+.ID{
+    -fx-background-color: #008080;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: #242551;
+}
+

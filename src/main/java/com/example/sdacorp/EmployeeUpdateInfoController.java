@@ -153,8 +153,7 @@ public class EmployeeUpdateInfoController implements Initializable {
         String uname = employee.getUsername();
         String passw = employee.getPassword();
         String add=employee.getAddress();
-        String name = employee.getName();
-        Date dob = (Date) employee.getDob();
+
 
         email.setText(eemail);
         address.setText(add);
