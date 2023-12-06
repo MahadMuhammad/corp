@@ -122,7 +122,11 @@ public class EmployeeUpdateInfoController implements Initializable {
         close_stage();
 
     }
+    @FXML
+    void OnclickNotificationBtn(ActionEvent event) throws IOException{
+        employeeModel.Employee_Notification(new Stage());
 
+    }
 
 
     public void close_stage()

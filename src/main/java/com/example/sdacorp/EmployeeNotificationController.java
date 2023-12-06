@@ -2,35 +2,47 @@ package com.example.sdacorp;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class EmployeeSubmitReport {
-
-    @FXML
-    private TextField Report_title;
+public class EmployeeNotificationController implements Initializable {
 
     @FXML
     private Label forclosing;
 
     @FXML
-    private TextField p_tile;
+    private Label notify;
 
     @FXML
-    private TextField report_desc;
+    private Label notify1;
 
-    @FXML
-    private Label label;
-
-    AccessID accessID=new AccessID();
 
     EmployeeModel employeeModel = new EmployeeModel();
 
 
-    int Employee_id = accessID.getEmployeeId();
+    AccessID accessID=new AccessID();
+
+    int employee_id = accessID.getEmployeeId();
+
+
+
+    EmployeeMain.EmployeeCRUD employeeCRUD = new EmployeeMain.EmployeeCRUD();
+    EmployeeMain.Employee employee;
+
+
+
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources)   {
+        //
+    }
 
 
     @FXML
@@ -71,37 +83,10 @@ public class EmployeeSubmitReport {
         close_stage();
     }
 
-    @FXML
-    void OnclickNotificationBtn(ActionEvent event) throws IOException{
-        employeeModel.Employee_Notification(new Stage());
-        close_stage();
-    }
-
     public void close_stage()
     {
         Stage closestage = (Stage) forclosing.getScene().getWindow();
         closestage.close();
-    }
-    @FXML
-    void OnclickSubmitBtn(ActionEvent event) {
-
-        if(p_tile.getText().isBlank() || report_desc.getText().isBlank() || report_desc.getText().isBlank())
-        {
-            label.setText("Fill all the fields");
-        }
-        else {
-
-
-            label.setText("Submitted");
-
-        }
-
-
-
-
-
-
-
     }
 
 }

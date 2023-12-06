@@ -7,8 +7,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sdacorp.EmployeeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sdacorp.EmployeeNotificationController">
     <children>
         <Pane prefHeight="568.0" prefWidth="270.0" style="-fx-background-color: #008080;">
             <children>
@@ -49,7 +50,7 @@
                         <Image url="@logos-imgs/complain.png" />
                     </image>
                 </ImageView>
-                  <Button layoutX="6.0" layoutY="510.0" mnemonicParsing="false" onAction="#OnclickNotificationBtn" prefHeight="50.0" prefWidth="201.0" text="Notification">
+                  <Button layoutX="6.0" layoutY="510.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" text="Notification">
                       <font>
                           <Font name="Helvetica Neue Bold Italic" size="18.0" />
                       </font>
@@ -86,50 +87,25 @@
             </ImageView>
             </children>
         </Pane>
-        <Label layoutX="282.0" layoutY="30.0" prefHeight="37.0" prefWidth="391.0" text="Personal Information" textAlignment="CENTER">
-            <font>
-                <Font name="Helvetica Neue Bold Italic" size="36.0" />
-            </font>
-        </Label>
-        <Label layoutX="282.0" layoutY="132.0" text="Name:">
-            <font>
-                <Font name="Helvetica Neue Bold Italic" size="24.0" />
-            </font>
-        </Label>
-        <Label fx:id="emp_name" layoutX="445.0" layoutY="131.0" prefHeight="33.0" prefWidth="369.0" styleClass="hrpage" stylesheets="@style.css" text="         ">
-            <font>
-                <Font name="Helvetica Neue Bold Italic" size="24.0" />
-            </font>
-        </Label>
-        <Label layoutX="281.0" layoutY="234.0" text="Address:">
-            <font>
-                <Font name="Helvetica Neue Bold Italic" size="24.0" />
-            </font>
-        </Label>
-        <Label fx:id="emp_add" layoutX="445.0" layoutY="233.0" prefHeight="33.0" prefWidth="369.0" styleClass="hrpage" stylesheets="@style.css">
-            <font>
-                <Font name="Helvetica Neue Bold Italic" size="24.0" />
-            </font>
-        </Label>
-        <Label layoutX="285.0" layoutY="332.0" text="Phone#:">
-            <font>
-                <Font name="Helvetica Neue Bold Italic" size="24.0" />
-            </font>
-        </Label>
-        <Label fx:id="emp_phone" layoutX="445.0" layoutY="332.0" prefHeight="31.0" prefWidth="369.0" styleClass="hrpage" stylesheets="@style.css">
-            <font>
-                <Font name="Helvetica Neue" size="24.0" />
-            </font>
-        </Label>
-        <Label layoutX="283.0" layoutY="426.0" text="Email:">
-            <font>
-                <Font name="Helvetica Neue Bold Italic" size="24.0" />
-            </font>
-        </Label>
-        <Label fx:id="emp_email" layoutX="445.0" layoutY="426.0" prefHeight="31.0" prefWidth="369.0" styleClass="hrpage" stylesheets="@style.css">
-            <font>
-                <Font name="Helvetica Neue" size="24.0" />
-            </font>
-        </Label>
+      <Label layoutX="444.0" layoutY="42.0" prefHeight="37.0" prefWidth="196.0" text="Notification" textAlignment="CENTER">
+         <font>
+            <Font name="Helvetica Neue Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="notify" layoutX="300.0" layoutY="239.0" prefHeight="126.0" prefWidth="515.0" styleClass="hrpage" stylesheets="@style.css" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Helvetica Neue Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="notify1" layoutX="294.0" layoutY="398.0" prefHeight="126.0" prefWidth="515.0" styleClass="hrpage" stylesheets="@style.css" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Helvetica Neue Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Text fill="#b90374" layoutX="352.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All the notification will be shown here" textAlignment="CENTER" wrappingWidth="430.81257247924805">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
     </children>
 </Pane>

@@ -67,7 +67,13 @@ public class EmployeeCreateAForm {
     @FXML
     void OnclickSubmitReportBtn(ActionEvent event) throws IOException{
         employeeModel.Employee_Submit_a_Report_page(new Stage());
+        close_stage();
+    }
 
+    @FXML
+    void OnclickNotificationBtn(ActionEvent event) throws IOException{
+        employeeModel.Employee_Notification(new Stage());
+        close_stage();
     }
 
     public void close_stage()

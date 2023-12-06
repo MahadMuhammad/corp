@@ -67,6 +67,18 @@ public class EmployeeModel {
     }
 
 
+    public void Employee_Notification(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("EmpNotification.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        stage.setResizable(false);
+        stage.setTitle("Employee Notification");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+
 
 
 
