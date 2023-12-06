@@ -44,7 +44,7 @@ public class ManagerNotificationController implements Initializable {
 
         managerModel.manager_create_project_page(new Stage());
 
-       close_stage();
+        close_stage();
 
     }
 
@@ -84,17 +84,17 @@ public class ManagerNotificationController implements Initializable {
         close_stage();
     }
 
+    @FXML
+    void OnClickNotificationBtn(ActionEvent event) throws IOException{
+        managerModel.manager_notification_page(new Stage());
+        close_stage();
+    }
+
 
     public void close_stage()
     {
         Stage closestage = (Stage) forclosing.getScene().getWindow();
         closestage.close();
-    }
-
-    @FXML
-    void OnClickNotificationBtn(ActionEvent event) throws IOException{
-        managerModel.manager_notification_page(new Stage());
-        close_stage();
     }
 
 }

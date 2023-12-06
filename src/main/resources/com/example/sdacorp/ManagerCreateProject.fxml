@@ -13,7 +13,7 @@
     <children>
         <Pane prefHeight="568.0" prefWidth="270.0" style="-fx-background-color: #008080;">
             <children>
-                <Button layoutX="4.0" layoutY="464.0" minHeight="48.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="153.0" text="Ratings">
+                <Button layoutX="4.0" layoutY="464.0" minHeight="48.0" mnemonicParsing="false" onAction="#OnClickRating" prefHeight="48.0" prefWidth="153.0" text="Ratings">
                     <font>
                         <Font name="Helvetica Neue Bold Italic" size="18.0" />
                     </font>
@@ -33,7 +33,7 @@
                         <Image url="@logos-imgs/close-line-icon.png" />
                     </image>
                 </ImageView>
-                <Button layoutX="3.0" layoutY="514.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="191.0" text="Notification">
+                <Button layoutX="3.0" layoutY="514.0" mnemonicParsing="false" onAction="#OnClickNotificationBtn" prefHeight="51.0" prefWidth="191.0" text="Notification">
                     <font>
                         <Font name="Helvetica Neue Bold Italic" size="18.0" />
                     </font>
@@ -83,7 +83,7 @@
                         <Image url="@logos-imgs/home.png" />
                     </image>
                 </ImageView>
-                <Button layoutX="5.0" layoutY="198.0" minHeight="44.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="222.0" text="Manage Project">
+                <Button layoutX="5.0" layoutY="198.0" minHeight="44.0" mnemonicParsing="false" onAction="#OnClickManageProjectBtn" prefHeight="50.0" prefWidth="222.0" text="Manage Project">
                     <font>
                         <Font name="Helvetica Neue Bold Italic" size="18.0" />
                     </font>
@@ -93,7 +93,7 @@
                         <Image url="@logos-imgs/managee.png" />
                     </image>
                 </ImageView>
-                <Button layoutX="4.0" layoutY="414.0" minHeight="44.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" text="Increments">
+                <Button layoutX="4.0" layoutY="414.0" minHeight="44.0" mnemonicParsing="false" onAction="#OnClickIncrementBtn" prefHeight="50.0" prefWidth="191.0" text="Increments">
                     <font>
                         <Font name="Helvetica Neue Bold Italic" size="18.0" />
                     </font>

@@ -8,12 +8,15 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.control.DatePicker;
+
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.Instant;
 import java.sql.Date;
 
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import javafx.util.Pair;
 
 import java.net.URL;
@@ -93,25 +96,7 @@ public class ManagerManageProjectController implements Initializable {
 
 
 
-    @FXML
-    void OnClickCreateProjectBtn(ActionEvent event) {
 
-    }
-
-    @FXML
-    void OnClickHomeBtn(ActionEvent event) {
-
-    }
-
-    @FXML
-    void OnClickUpdateInfoBtn(ActionEvent event) {
-
-    }
-
-    @FXML
-    void OncClickCloseProjectBtn(ActionEvent event) {
-
-    }
     @FXML
 
     void handleKeyPressed(KeyEvent event) {
@@ -187,5 +172,76 @@ public class ManagerManageProjectController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+    }
+
+
+    @FXML
+    void OnClickHomeBtn(ActionEvent event) throws IOException {
+
+        managerModel.manager_home_page(new Stage());
+        close_stage();
+
+    }
+
+
+
+    @FXML
+    void OnClickCreateProjectBtn(ActionEvent event)throws IOException {
+
+        managerModel.manager_create_project_page(new Stage());
+
+        close_stage();
+
+    }
+
+    @FXML
+    void OnClickUpdateInfoBtn(ActionEvent event)throws IOException {
+
+        managerModel.manager_Update_Info_page(new Stage());
+        close_stage();
+
+    }
+
+
+
+    @FXML
+    void OncClickCloseProjectBtn(ActionEvent event) throws IOException {
+
+        managerModel.manager_Close_project_stage(new Stage());
+        close_stage();
+
+    }
+
+    @FXML
+    void OnClickManageProjectBtn(ActionEvent event)  throws IOException{
+        managerModel.manager_manage_project(new Stage());
+        close_stage();
+    }
+
+    @FXML
+    void OnClickIncrementBtn(ActionEvent event)  throws IOException{
+        managerModel.manager_Increments_page(new Stage());
+        close_stage();
+    }
+
+    @FXML
+    void OnClickRating(ActionEvent event) throws IOException {
+        managerModel.manager_Rating_page(new Stage());
+        close_stage();
+    }
+
+    @FXML
+    void OnClickNotificationBtn(ActionEvent event) throws IOException{
+        managerModel.manager_notification_page(new Stage());
+        close_stage();
+    }
+
+
+    public void close_stage()
+    {
+        Stage closestage = (Stage) forclosing.getScene().getWindow();
+        closestage.close();
     }
 }
