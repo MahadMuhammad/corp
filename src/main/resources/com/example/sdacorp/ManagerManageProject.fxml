@@ -107,13 +107,13 @@
             </ImageView>
             </children>
         </Pane>
-      <ListView fx:id="listview" layoutX="694.0" layoutY="48.0" prefHeight="187.0" prefWidth="122.0" />
-      <Text layoutX="694.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" textAlignment="CENTER" wrappingWidth="39.0">
+      <ListView fx:id="listview" layoutX="694.0" layoutY="53.0" prefHeight="187.0" prefWidth="122.0" />
+      <Text layoutX="706.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" textAlignment="CENTER" wrappingWidth="39.0">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="726.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" wrappingWidth="97.444580078125">
+      <Text layoutX="726.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" wrappingWidth="97.444580078125">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -139,7 +139,7 @@
             </font>
         </Label>
         <DatePicker fx:id="pdeadline" layoutX="522.0" layoutY="437.0" prefHeight="28.0" prefWidth="302.0" promptText="Select Date to change Deadline" />
-        <Button layoutX="493.0" layoutY="511.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Manage">
+        <Button layoutX="493.0" layoutY="511.0" mnemonicParsing="false" onAction="#OnClickManageBtn" prefHeight="50.0" prefWidth="120.0" text="Manage">
             <font>
                 <Font size="24.0" />
             </font>
@@ -171,5 +171,10 @@
       </TextField>
       <Label layoutX="301.0" layoutY="183.0" prefHeight="37.0" prefWidth="320.0" text="Write  the Project ID You Want To Manage And Press Enter" />
       <Label layoutX="530.0" layoutY="465.0" prefHeight="17.0" prefWidth="222.0" text="(Click To Change The Project Deadline)" />
+      <Label layoutX="685.0" layoutY="14.0" text="Current Projects">
+         <font>
+            <Font name="Helvetica Neue Bold Italic" size="17.0" />
+         </font>
+      </Label>
     </children>
 </Pane>

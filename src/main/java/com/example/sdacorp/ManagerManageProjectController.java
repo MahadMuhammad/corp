@@ -58,6 +58,31 @@ public class ManagerManageProjectController implements Initializable {
 
 
     @FXML
+    void OnClickManageBtn(ActionEvent event) {
+
+        project = new ProjectMain.Project(
+                pname.getText(),
+                pdesc.getText(),
+                project.getStatus(),
+                pdeadline.getValue(),
+               project.getStartDate(),
+                pdeadline.getValue()
+        );
+        try {
+            projectCRUD.updateProject(project);
+            plabel.setText("UPDATED");
+        } catch (SQLException e) {
+            plabel.setText("NOT UPDATED");
+            e.printStackTrace();
+        }
+
+
+
+    }
+
+
+
+    @FXML
     void OnClickCreateProjectBtn(ActionEvent event) {
 
     }
