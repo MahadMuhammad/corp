@@ -142,7 +142,7 @@
             <Font name="Helvetica Neue Bold Italic" size="17.0" />
          </font>
       </Label>
-      <Label fx:id="label" layoutX="411.0" layoutY="382.0" prefHeight="38.0" prefWidth="300.0" textAlignment="CENTER" textFill="RED">
+      <Label fx:id="label" layoutX="411.0" layoutY="382.0" prefHeight="38.0" prefWidth="392.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="26.0" />
          </font>
