@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="568.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sdacorp.ManagerIncrementsController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="568.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sdacorp.ManagerRatingController">
     <children>
         <Pane prefHeight="568.0" prefWidth="270.0" style="-fx-background-color: #008080;">
             <children>
@@ -117,12 +117,12 @@
                 <Font name="System Bold" size="15.0" />
             </font>
         </Text>
-        <Label layoutX="434.0" layoutY="21.0" text="Increments">
+        <Label layoutX="434.0" layoutY="21.0" text="Rating">
             <font>
                 <Font name="Helvetica Neue Bold Italic" size="36.0" />
             </font>
         </Label>
-        <Button layoutX="493.0" layoutY="511.0" mnemonicParsing="false" onAction="#OnClickIncremntBtn" prefHeight="50.0" prefWidth="151.0" text="Increment">
+        <Button layoutX="493.0" layoutY="511.0" mnemonicParsing="false" onAction="#OnClickIncremntBtn" prefHeight="50.0" prefWidth="151.0" text="Submit">
             <font>
                 <Font size="24.0" />
             </font>
@@ -148,25 +148,16 @@
                 <Font name="Helvetica Neue Bold Italic" size="17.0" />
             </font>
         </Label>
-      <Label layoutX="283.0" layoutY="380.0" text="Current Salary:">
+      <Label layoutX="308.0" layoutY="416.0" text="Rating">
          <font>
             <Font name="Helvetica Neue Bold Italic" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="emp_curr_salary" editable="false" layoutX="482.0" layoutY="382.0" prefHeight="29.0" prefWidth="302.0">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </TextField>
-      <Label layoutX="278.0" layoutY="442.0" text="Incremental Amount:">
-         <font>
-            <Font name="Helvetica Neue Bold Italic" size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="increment_amount" alignment="TOP_LEFT" layoutX="522.0" layoutY="433.0" prefHeight="51.0" prefWidth="134.0" styleClass="ID" stylesheets="@style.css">
+      <TextField fx:id="increment_amount" alignment="TOP_LEFT" layoutX="472.0" layoutY="407.0" prefHeight="51.0" prefWidth="134.0" styleClass="ID" stylesheets="@style.css">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
+      <Label layoutX="623.0" layoutY="415.0" prefHeight="37.0" prefWidth="57.0" text="Out of 10" />
     </children>
 </Pane>

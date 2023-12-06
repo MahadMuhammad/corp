@@ -64,7 +64,8 @@ public class EmployeeUpdateInfoController implements Initializable {
 
 
         employee = new EmployeeMain.Employee(
-                Employee_id, username.getText(),
+                Employee_id,
+                username.getText(),
                 password.getText(),
                 employee.getName(),
                 employee.getDob(),

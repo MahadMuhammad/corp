@@ -11,17 +11,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.util.Pair;
 
 import java.net.URL;
-import java.sql.Date;
 import java.sql.SQLException;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import static com.example.sdacorp.EmployeeMain.EmployeeCRUD;
 
-public class ManagerIncrementsController  implements Initializable {
+public class ManagerRatingController implements Initializable {
 
     @FXML
     private TextField emp_ID;
@@ -41,7 +37,7 @@ public class ManagerIncrementsController  implements Initializable {
     @FXML
     private Label label;
 
-    EmployeeMain.EmployeeCRUD employeeCRUD = new EmployeeMain.EmployeeCRUD();
+    EmployeeCRUD employeeCRUD = new EmployeeCRUD();
     EmployeeMain.Employee employee;
 
     EmployeeSalaryMain.EmployeeSalaryCRUD employeeSalaryCRUD = new EmployeeSalaryMain.EmployeeSalaryCRUD();
@@ -97,7 +93,7 @@ public class ManagerIncrementsController  implements Initializable {
         double total_salary;
 
         if (increment_amount.getText().isBlank()){
-            label.setText("Enter the increment amount");
+            label.setText("Please! Enter the Rating");
         } else {
             double increment_amount_double = Double.parseDouble(increment_amount.getText());
             try {
@@ -105,10 +101,10 @@ public class ManagerIncrementsController  implements Initializable {
                 employeeSalaryCRUD.updateSalary(employeeSalary);
 
 
-                total_salary = employeeSalaryCRUD.getTotalSalary(emp_id);
-                label.setText("Incremented, Total Salary is : " + total_salary);
+//                total_salary = employeeSalaryCRUD.getTotalSalary(emp_id);
+//                label.setText("Incremented, Total Salary is : " + total_salary);
             } catch (Exception e) {
-                label.setText("Incremented");
+                label.setText("Rated !!!!");
             }
         }
     }

@@ -115,7 +115,7 @@ public class EmployeeSalaryMain {
     public static class EmployeeSalaryCRUD {
         private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/corp";
         private static final String DATABASE_USERNAME = "root";
-        private static final String DATABASE_PASSWORD = "mahad";
+        private static final String DATABASE_PASSWORD = "12345678";
 
         public void updateSalary(EmployeeSalary employeeSalary) throws SQLException {
             try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)) {
@@ -142,6 +142,36 @@ public class EmployeeSalaryMain {
                     return new EmployeeSalary(eid, baseSalary, bonus, fine);
                 } else {
                     return null;
+                }
+            }
+        }
+
+        public double getBaseSalary(int eid) throws SQLException {
+            try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)) {
+                String sql = "SELECT base_salary FROM corp.employee_salary WHERE eid =  ?";
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setInt(1, eid);
+                ResultSet resultSet = statement.executeQuery();
+                if (resultSet.next()) {
+                    double baseSalary = resultSet.getDouble("base_salary");
+                    return baseSalary;
+                } else {
+                    return 0;
+                }
+            }
+        }
+
+        public double getTotalSalary(int eid) throws SQLException {
+            try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)) {
+                String sql = "SELECT base_salary + bonus - fine AS total_salary FROM corp.employee_salary WHERE eid =  ?";
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setInt(1, eid);
+                ResultSet resultSet = statement.executeQuery();
+                if (resultSet.next()) {
+                    double totalSalary = resultSet.getDouble("total_salary");
+                    return totalSalary;
+                } else {
+                    return 0;
                 }
             }
         }

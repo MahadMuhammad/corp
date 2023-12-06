@@ -95,15 +95,15 @@ public class ManagerModel  {
 
     }
 
+    public void manager_Rating_page(Stage stage) throws IOException {
 
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ManagerRating.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
 
+        stage.setResizable(false);
+        stage.setTitle("Increment");
+        stage.setScene(scene);
+        stage.show();
 
-
-
-
-
-
-
-
-
+    }
 }

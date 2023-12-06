@@ -11,7 +11,7 @@
     <children>
         <Pane prefHeight="568.0" prefWidth="270.0" style="-fx-background-color: #008080;">
             <children>
-            <Button layoutX="4.0" layoutY="464.0" minHeight="48.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="153.0" text="Ratings">
+            <Button layoutX="4.0" layoutY="464.0" minHeight="48.0" mnemonicParsing="false" onAction="#OnClickRating" prefHeight="48.0" prefWidth="153.0" text="Ratings">
                <font>
                   <Font name="Helvetica Neue Bold Italic" size="18.0" />
                </font>

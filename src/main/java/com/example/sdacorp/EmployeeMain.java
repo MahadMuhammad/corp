@@ -231,6 +231,26 @@ public class EmployeeMain {
                 return 0;
             }
         }
+
+        public List<Pair<Integer, String>> getAllEmployees() throws SQLException
+        {
+            try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD))
+            {
+                String sql = "SELECT eid, username FROM employee";
+                PreparedStatement statement = connection.prepareStatement(sql);
+                ResultSet resultSet = statement.executeQuery();
+                List<Pair<Integer, String>> projectList = new ArrayList<>();
+                while (resultSet.next()) {
+                    int eid = resultSet.getInt("eid");
+                    String name = resultSet.getString("username");
+                    projectList.add(new Pair<>(eid, name));
+                }
+                return projectList;
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
     }
 
     public static class Employee {
@@ -354,22 +374,5 @@ public class EmployeeMain {
             this.isAvailable = isAvailable;
         }
 
-    }
-    public List<Pair<Integer, String>> getAllEmployees() throws SQLException {
-        try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)) {
-            String sql = "SELECT eid, name FROM employee";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            ResultSet resultSet = statement.executeQuery();
-            List<Pair<Integer, String>> projectList = new ArrayList<>();
-            while (resultSet.next()) {
-                int eid = resultSet.getInt("eid");
-                String name = resultSet.getString("name");
-                projectList.add(new Pair<>(eid, name));
-            }
-            return projectList;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
     }
 }

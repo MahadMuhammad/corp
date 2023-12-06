@@ -117,6 +117,12 @@ public class ManagerController implements Initializable {
         close_stage();
     }
 
+    @FXML
+    void OnClickRating(ActionEvent event) throws IOException {
+        managerModel.manager_Rating_page(new Stage());
+        close_stage();
+    }
+
 
     public void close_stage()
     {
