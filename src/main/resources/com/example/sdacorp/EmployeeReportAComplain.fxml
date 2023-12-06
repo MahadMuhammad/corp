@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sdacorp.EmployeeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sdacorp.EmployeeReportAComplain">
     <children>
         <Pane prefHeight="568.0" prefWidth="270.0" style="-fx-background-color: #008080;">
             <children>
@@ -87,7 +87,7 @@
                 </ImageView>
             </children>
         </Pane>
-        <Label layoutX="388.0" layoutY="24.0" prefHeight="44.0" prefWidth="333.0" text="Report a Complain" textAlignment="CENTER">
+        <Label layoutX="388.0" layoutY="24.0" prefHeight="44.0" prefWidth="333.0" text="Complaint Report" textAlignment="CENTER">
             <font>
                 <Font name="Helvetica Neue Bold Italic" size="36.0" />
             </font>
@@ -102,15 +102,25 @@
                 <Font name="Helvetica Neue Bold Italic" size="24.0" />
             </font>
         </Label>
-      <TextField layoutX="494.0" layoutY="134.0" prefHeight="28.0" prefWidth="333.0" promptText="Enter Complaint tiltle Here">
+      <TextField fx:id="C_Title" layoutX="494.0" layoutY="134.0" prefHeight="28.0" prefWidth="333.0" promptText="Enter Complaint tiltle Here">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField alignment="TOP_LEFT" layoutX="293.0" layoutY="236.0" prefHeight="291.0" prefWidth="532.0" promptText="Enter the complaint description here...">
+      <TextField fx:id="C_Description" alignment="TOP_LEFT" layoutX="293.0" layoutY="236.0" prefHeight="214.0" prefWidth="532.0" promptText="Enter the complaint description here...">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
+      <Button layoutX="509.0" layoutY="504.0" mnemonicParsing="false" onAction="#OnClickComplain" text="Complain">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="label" layoutX="424.0" layoutY="463.0" prefHeight="29.0" prefWidth="333.0" textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
     </children>
 </Pane>

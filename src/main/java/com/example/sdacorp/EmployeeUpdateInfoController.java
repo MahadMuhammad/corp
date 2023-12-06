@@ -119,6 +119,7 @@ public class EmployeeUpdateInfoController implements Initializable {
     @FXML
     void OnclickSubmitReportBtn(ActionEvent event) throws IOException{
         employeeModel.Employee_Submit_a_Report_page(new Stage());
+        close_stage();
 
     }
 

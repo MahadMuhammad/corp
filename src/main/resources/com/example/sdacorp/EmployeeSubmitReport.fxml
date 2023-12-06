@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sdacorp.EmployeeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sdacorp.EmployeeSubmitReport">
     <children>
         <Pane prefHeight="568.0" prefWidth="270.0" style="-fx-background-color: #008080;">
             <children>
@@ -87,30 +87,50 @@
                 </ImageView>
             </children>
         </Pane>
-        <Label layoutX="388.0" layoutY="24.0" prefHeight="44.0" prefWidth="333.0" text="Report a Complain" textAlignment="CENTER">
+        <Label layoutX="414.0" layoutY="22.0" prefHeight="44.0" prefWidth="333.0" text="Report Submission" textAlignment="CENTER">
             <font>
                 <Font name="Helvetica Neue Bold Italic" size="36.0" />
             </font>
         </Label>
-        <Label layoutX="282.0" layoutY="132.0" text="Complaint Title:">
+        <Label layoutX="282.0" layoutY="89.0" text="Project Title:">
             <font>
                 <Font name="Helvetica Neue Bold Italic" size="24.0" />
             </font>
         </Label>
-        <Label layoutX="282.0" layoutY="205.0" text="Complaint Description:">
+        <Label layoutX="282.0" layoutY="205.0" text="Report Description:">
             <font>
                 <Font name="Helvetica Neue Bold Italic" size="24.0" />
             </font>
         </Label>
-        <TextField layoutX="494.0" layoutY="134.0" prefHeight="28.0" prefWidth="333.0" promptText="Enter Complaint tiltle Here">
+        <TextField fx:id="p_tile" layoutX="483.0" layoutY="86.0" prefHeight="28.0" prefWidth="333.0" promptText="Enter Project Tiltle Here">
             <font>
                 <Font size="18.0" />
             </font>
         </TextField>
-        <TextField alignment="TOP_LEFT" layoutX="293.0" layoutY="236.0" prefHeight="291.0" prefWidth="532.0" promptText="Enter the complaint description here...">
+        <TextField fx:id="report_desc" alignment="TOP_LEFT" layoutX="293.0" layoutY="236.0" prefHeight="181.0" prefWidth="532.0" promptText="Enter The Final Report Here.....">
             <font>
                 <Font size="24.0" />
             </font>
         </TextField>
+      <Label layoutX="282.0" layoutY="141.0" text="Report Title:">
+         <font>
+            <Font name="Helvetica Neue Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Report_title" layoutX="483.0" layoutY="138.0" prefHeight="28.0" prefWidth="333.0" promptText="Enter the Report Title Here">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label fx:id="label" layoutX="372.0" layoutY="436.0" prefHeight="44.0" prefWidth="384.0" textFill="RED">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="476.0" layoutY="485.0" mnemonicParsing="false" onAction="#OnclickSubmitBtn" prefHeight="50.0" prefWidth="171.0" text="Submit">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
     </children>
 </Pane>

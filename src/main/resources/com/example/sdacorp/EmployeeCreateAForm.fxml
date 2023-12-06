@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sdacorp.EmployeeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sdacorp.EmployeeCreateAForm">
     <children>
         <Pane prefHeight="568.0" prefWidth="270.0" style="-fx-background-color: #008080;">
             <children>
@@ -102,15 +102,25 @@
                 <Font name="Helvetica Neue Bold Italic" size="24.0" />
             </font>
         </Label>
-        <TextField layoutX="473.0" layoutY="134.0" prefHeight="37.0" prefWidth="348.0" promptText="Enter Form Type here">
+        <TextField fx:id="form_type" layoutX="473.0" layoutY="134.0" prefHeight="37.0" prefWidth="348.0" promptText="Enter Form Type here">
             <font>
                 <Font size="18.0" />
             </font>
         </TextField>
-        <TextField alignment="TOP_LEFT" layoutX="293.0" layoutY="236.0" prefHeight="291.0" prefWidth="532.0" promptText="Enter the Form Description here.....">
+        <TextField fx:id="form_description" alignment="TOP_LEFT" layoutX="293.0" layoutY="236.0" prefHeight="220.0" prefWidth="532.0" promptText="Enter the Form Description here.....">
             <font>
                 <Font size="24.0" />
             </font>
         </TextField>
+      <Button layoutX="492.0" layoutY="494.0" mnemonicParsing="false" onAction="#OnClcikSubmitBtn" prefHeight="50.0" prefWidth="135.0" text="Submit">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="label" layoutX="384.0" layoutY="463.0" prefHeight="28.0" prefWidth="367.0" textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
     </children>
 </Pane>
