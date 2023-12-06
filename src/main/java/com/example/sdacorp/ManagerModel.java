@@ -106,4 +106,16 @@ public class ManagerModel  {
         stage.show();
 
     }
+
+    public void manager_notification_page(Stage stage) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ManagerNotification.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        stage.setResizable(false);
+        stage.setTitle("Increment");
+        stage.setScene(scene);
+        stage.show();
+
+    }
 }
