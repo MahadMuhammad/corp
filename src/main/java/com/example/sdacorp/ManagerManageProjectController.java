@@ -47,7 +47,7 @@ public class ManagerManageProjectController implements Initializable {
     private TextField pname;
 
 
-
+    Date start_date;
 
 
     ProjectMain.ProjectCRUD projectCRUD = new ProjectMain.ProjectCRUD();
@@ -59,14 +59,25 @@ public class ManagerManageProjectController implements Initializable {
 
     @FXML
     void OnClickManageBtn(ActionEvent event) {
+        String project_id_str = P_ID.getText();
+        int project_id = Integer.parseInt(project_id_str);
+
+
+        Date pstartdate = Date.valueOf(pdeadline.getValue().toString());
+        String project_name = pname.getText();
+        String project_desc = pdesc.getText();
+        String project_status =  project.getStatus();
+        Date project_deadline = Date.valueOf(pdeadline.getValue().toString());
+        Date project_end_date = Date.valueOf(pdeadline.getValue().toString());
 
         project = new ProjectMain.Project(
-                pname.getText(),
-                pdesc.getText(),
-                project.getStatus(),
-                pdeadline.getValue(),
-               project.getStartDate(),
-                pdeadline.getValue()
+                project_id,
+                project_name,
+                project_desc,
+                project_status,
+                project_deadline,
+                start_date,
+                project_end_date
         );
         try {
             projectCRUD.updateProject(project);
@@ -122,7 +133,7 @@ public class ManagerManageProjectController implements Initializable {
                     String name = project.getName();
                     String description = project.getDescription();
                     Date deadline = project.getDeadline();
-
+                    start_date = project.getStartDate();
                     // Convert java.sql.Date to LocalDate
                     Instant instant = deadline.toLocalDate().atStartOfDay(ZoneId.systemDefault()).toInstant();
                     LocalDate localDeadline = instant.atZone(ZoneId.systemDefault()).toLocalDate();
@@ -154,6 +165,16 @@ public class ManagerManageProjectController implements Initializable {
             for (Pair<Integer,String> project : allprojects) {
                 String s = project.getKey() + "\t\t" + project.getValue() + " \n";
                 listview.getItems().add(s);
+            }
+
+            ProjectMain.Project oldproject;
+            String project_id_str = P_ID.getText();
+            int project_id = Integer.parseInt(project_id_str);
+
+            try {
+                oldproject = projectCRUD.getProject(project_id);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
 
 
