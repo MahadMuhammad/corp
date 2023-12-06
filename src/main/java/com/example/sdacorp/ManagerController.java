@@ -111,6 +111,13 @@ public class ManagerController implements Initializable {
         close_stage();
     }
 
+    @FXML
+    void OnClickIncrementBtn(ActionEvent event)  throws IOException{
+        managerModel.manager_Increments_page(new Stage());
+        close_stage();
+    }
+
+
     public void close_stage()
     {
         Stage closestage = (Stage) forclosing.getScene().getWindow();

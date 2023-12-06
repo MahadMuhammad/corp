@@ -95,7 +95,7 @@
                   <Image url="@logos-imgs/managee.png" />
                </image>
             </ImageView>
-            <Button layoutX="4.0" layoutY="414.0" minHeight="44.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" text="Increments">
+            <Button fx:id="OnClickIncrementBtn" layoutX="4.0" layoutY="414.0" minHeight="44.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" text="Increments">
                <font>
                   <Font name="Helvetica Neue Bold Italic" size="18.0" />
                </font>

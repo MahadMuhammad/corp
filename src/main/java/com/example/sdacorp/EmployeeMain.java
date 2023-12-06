@@ -1,9 +1,13 @@
 package com.example.sdacorp;
 
+import javafx.util.Pair;
+
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeMain {
@@ -350,5 +354,22 @@ public class EmployeeMain {
             this.isAvailable = isAvailable;
         }
 
+    }
+    public List<Pair<Integer, String>> getAllEmployees() throws SQLException {
+        try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)) {
+            String sql = "SELECT eid, name FROM employee";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+            List<Pair<Integer, String>> projectList = new ArrayList<>();
+            while (resultSet.next()) {
+                int eid = resultSet.getInt("eid");
+                String name = resultSet.getString("name");
+                projectList.add(new Pair<>(eid, name));
+            }
+            return projectList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
