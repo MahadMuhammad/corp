@@ -55,10 +55,14 @@ public class HRModel {
 
     }
 
+    public void hr_Notification(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HRNotification.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
 
+        stage.setResizable(false);
+        stage.setTitle("HR Notification");
+        stage.setScene(scene);
+        stage.show();
 
-
-
-
-
+    }
 }

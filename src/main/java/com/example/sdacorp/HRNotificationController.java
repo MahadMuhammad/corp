@@ -17,18 +17,6 @@ public class HRNotificationController implements Initializable {
     @FXML
     private Label forclosing;
 
-    @FXML
-    private Label hrname;
-
-    @FXML
-    private Label hremail;
-
-    @FXML
-    private Label hrphone;
-
-    @FXML
-    private Label hraddress;
-
     HRModel hrModel=new HRModel();
 
 
@@ -47,25 +35,6 @@ public class HRNotificationController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources)   {
-
-        try {
-
-            hr = hrCRUD.getHR(HR_id);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        String name = hr.getName();
-        String address = hr.getAddress();
-        String ph = hr.getContact();
-        String email = hr.getEmail();
-
-        hrname.setText(name);
-        hraddress.setText(address);
-        hrphone.setText(ph);
-        hremail.setText(email);
-
-
     }
 
 
@@ -73,22 +42,30 @@ public class HRNotificationController implements Initializable {
     @FXML
     void onclickrgistrationbtn() throws IOException {
 
-            hrModel.hr_registrationpage(new Stage());
-            close_stage();
+        hrModel.hr_registrationpage(new Stage());
+        close_stage();
 
     }
 
     @FXML
     void onclickupdateinfobtn() throws IOException {
 
-            hrModel.hr_updateinfopage(new Stage());
-            close_stage();
+        hrModel.hr_updateinfopage(new Stage());
+        close_stage();
     }
 
     @FXML
     void OnClickCreateAccount(ActionEvent event) throws IOException{
 
         hrModel.hr_CreateAccountPage(new Stage());
+        close_stage();
+
+    }
+
+    @FXML
+    void OnClickNotification (ActionEvent event) throws IOException{
+
+        hrModel.hr_Notification(new Stage());
         close_stage();
 
     }
