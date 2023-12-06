@@ -45,6 +45,11 @@ public class ManagerCreateProjectController {
     @FXML
     void OnClickCreateBtn(ActionEvent event) {
 
+        if (pname.getText().isBlank() || pdesc.getText().isBlank()){
+            plabel.setText("Please fill all the fields");
+            return;
+        }
+
 
             String project_name = pname.getText();
             String project_desc = pdesc.getText();
@@ -56,6 +61,7 @@ public class ManagerCreateProjectController {
 
         if( project_name.isEmpty() || project_desc.isEmpty() ) {
                 plabel.setText("Please fill all the fields");
+                return;
         } else {
                 project = new ProjectMain.Project(project_name, project_desc, project_status, project_deadline,project_start_date, project_deadline);
                 try {

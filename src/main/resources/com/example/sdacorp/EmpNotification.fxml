@@ -28,7 +28,7 @@
                           <Font name="Helvetica Neue Bold Italic" size="18.0" />
                       </font>
                   </Button>
-            <Button layoutX="6.0" layoutY="403.0" mnemonicParsing="false" onAction="#OnClickCreateAFormBtn" prefHeight="50.0" prefWidth="222.0" text="Create a From">
+            <Button layoutX="6.0" layoutY="403.0" mnemonicParsing="false" onAction="#OnClickCreateAFormBtn" prefHeight="50.0" prefWidth="222.0" text="Create a Form">
                <font>
                   <Font name="Helvetica Neue Bold Italic" size="18.0" />
                </font>
