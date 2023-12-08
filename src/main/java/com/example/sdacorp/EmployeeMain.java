@@ -165,22 +165,6 @@ public class EmployeeMain {
             }
         }
 
-        // add employee with auto increment eid
-        public void addEmployee_auto(Employee employee) throws SQLException {
-            String sql = "INSERT INTO employee (username, password, name, dob, address, contact, email, isavailable) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-            try (Connection connection = getConnection();
-                 PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setString(1, employee.getUsername());
-                statement.setString(2, employee.getPassword());
-                statement.setString(3, employee.getName());
-                statement.setDate(4, new java.sql.Date(employee.getDob().getTime()));
-                statement.setString(5, employee.getAddress());
-                statement.setString(6, employee.getContact());
-                statement.setString(7, employee.getEmail());
-                statement.setBoolean(8, employee.isAvailable());
-                statement.executeUpdate();
-            }
-        }
 
         public void updateEmployee(Employee employee) throws SQLException {
             String sql = "UPDATE employee SET username = ?, password = ?, name = ?, dob = ?, address = ?, contact = ?, email = ?, isavailable = ? WHERE eid = ?";

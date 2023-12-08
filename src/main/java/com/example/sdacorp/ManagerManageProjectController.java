@@ -152,15 +152,15 @@ public class ManagerManageProjectController implements Initializable {
                 listview.getItems().add(s);
             }
 
-            ProjectMain.Project oldproject;
-            String project_id_str = P_ID.getText();
-            int project_id = Integer.parseInt(project_id_str);
-
-            try {
-                oldproject = projectCRUD.getProject(project_id);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+//            ProjectMain.Project oldproject;
+//            String project_id_str = P_ID.getText();
+//            int project_id = Integer.parseInt(project_id_str);
+//
+//            try {
+//                oldproject = projectCRUD.getProject(project_id);
+//            } catch (SQLException e) {
+//                throw new RuntimeException(e);
+//            }
 
 
 
