@@ -54,6 +54,8 @@ public class HRNotificationController implements Initializable {
         close_stage();
     }
 
+
+
     @FXML
     void OnClickCreateAccount(ActionEvent event) throws IOException{
 

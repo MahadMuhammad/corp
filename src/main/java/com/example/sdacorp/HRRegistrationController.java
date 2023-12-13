@@ -100,6 +100,13 @@ public class HRRegistrationController {
 
 
     }
+    @FXML
+    void OnClickNotification (ActionEvent event) throws IOException{
+
+        hrModel.hr_Notification(new Stage());
+        close_stage();
+
+    }
 
     @FXML
     void OnClickHomeBtn(ActionEvent event)throws IOException {

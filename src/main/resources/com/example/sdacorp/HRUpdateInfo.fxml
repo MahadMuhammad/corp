@@ -13,7 +13,7 @@
     <children>
         <Pane prefHeight="568.0" prefWidth="270.0" style="-fx-background-color: #008080;" stylesheets="@style.css">
             <children>
-                <Button layoutX="8.0" layoutY="451.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="196.0" text="Notification" textAlignment="JUSTIFY">
+                <Button layoutX="8.0" layoutY="451.0" mnemonicParsing="false" onAction="#OnClickNotification" prefHeight="50.0" prefWidth="196.0" text="Notification" textAlignment="JUSTIFY">
                     <font>
                         <Font name="Helvetica Neue Bold Italic" size="18.0" />
                     </font>

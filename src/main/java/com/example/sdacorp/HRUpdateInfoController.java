@@ -115,6 +115,13 @@ public class HRUpdateInfoController implements Initializable {
         close_stage();
 
     }
+    @FXML
+    void OnClickNotification (ActionEvent event) throws IOException{
+
+        hrModel.hr_Notification(new Stage());
+        close_stage();
+
+    }
 
 
     public void close_stage()
