@@ -123,6 +123,14 @@ public class HRUpdateInfoController implements Initializable {
 
     }
 
+    @FXML
+    void OnClcikDeleteEmployee(ActionEvent event)throws IOException {
+        hrModel.hr_delete_employee(new Stage());
+        close_stage();
+
+    }
+
+
 
     public void close_stage()
     {

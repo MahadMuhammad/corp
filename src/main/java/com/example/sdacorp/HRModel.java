@@ -65,4 +65,15 @@ public class HRModel {
         stage.show();
 
     }
+
+    public void hr_delete_employee(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HRDeleteEmployee.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        stage.setResizable(false);
+        stage.setTitle("HR Delete Employee");
+        stage.setScene(scene);
+        stage.show();
+
+    }
 }

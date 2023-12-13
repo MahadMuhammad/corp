@@ -109,6 +109,13 @@ public class HRRegistrationController {
     }
 
     @FXML
+    void OnClcikDeleteEmployee(ActionEvent event)throws IOException {
+        hrModel.hr_delete_employee(new Stage());
+        close_stage();
+
+    }
+
+    @FXML
     void OnClickHomeBtn(ActionEvent event)throws IOException {
 
         hrModel.hr_Homepage(new Stage());

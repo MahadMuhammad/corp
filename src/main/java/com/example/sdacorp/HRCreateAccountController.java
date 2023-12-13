@@ -164,6 +164,15 @@ public class HRCreateAccountController {
 
     }
 
+
+
+    @FXML
+    void OnClcikDeleteEmployee(ActionEvent event)throws IOException {
+        hrModel.hr_delete_employee(new Stage());
+        close_stage();
+
+    }
+
     public void close_stage()
     {
         Stage closestage = (Stage) forclosing.getScene().getWindow();

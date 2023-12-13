@@ -72,6 +72,21 @@ public class HRNotificationController implements Initializable {
 
     }
 
+    @FXML
+    void OnClickHomeBtn(ActionEvent event)throws IOException {
+
+        hrModel.hr_Homepage(new Stage());
+        close_stage();
+
+    }
+
+    @FXML
+    void OnClcikDeleteEmployee(ActionEvent event)throws IOException {
+        hrModel.hr_delete_employee(new Stage());
+        close_stage();
+
+    }
+
     public void close_stage()
     {
         Stage closestage = (Stage) forclosing.getScene().getWindow();

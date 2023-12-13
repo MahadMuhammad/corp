@@ -16,6 +16,11 @@
     <children>
         <Pane prefHeight="568.0" prefWidth="270.0" style="-fx-background-color: #008080;" stylesheets="@style.css">
             <children>
+                <Button layoutX="11.0" layoutY="505.0" minHeight="44.0" mnemonicParsing="false" onAction="#OnClcikDeleteEmployee" prefHeight="44.0" prefWidth="226.0" text="Delete Employee" textAlignment="JUSTIFY">
+                    <font>
+                        <Font name="Helvetica Neue Bold Italic" size="18.0" />
+                    </font>
+                </Button>
                 <Button layoutX="8.0" layoutY="451.0" mnemonicParsing="false" onAction="#OnClickNotification" prefHeight="50.0" prefWidth="196.0" text="Notification" textAlignment="JUSTIFY">
                     <font>
                         <Font name="Helvetica Neue Bold Italic" size="18.0" />
@@ -74,6 +79,11 @@
                 <ImageView fitHeight="34.0" fitWidth="41.0" layoutX="14.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@logos-imgs/createaccount.jpeg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="16.0" layoutY="508.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@logos-imgs/del emp.png" />
                     </image>
                 </ImageView>
             </children>

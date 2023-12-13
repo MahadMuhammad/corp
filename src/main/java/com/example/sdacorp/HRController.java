@@ -97,9 +97,24 @@ public class HRController implements Initializable {
     }
 
     @FXML
+    void OnClickHomeBtn(ActionEvent event)throws IOException {
+
+        hrModel.hr_Homepage(new Stage());
+        close_stage();
+
+    }
+
+
+    @FXML
     void OnClickNotification (ActionEvent event) throws IOException{
 
         hrModel.hr_Notification(new Stage());
+        close_stage();
+
+    }
+    @FXML
+    void OnClcikDeleteEmployee(ActionEvent event)throws IOException {
+        hrModel.hr_delete_employee(new Stage());
         close_stage();
 
     }
