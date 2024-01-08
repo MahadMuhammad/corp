@@ -1,4 +1,12 @@
 # CORP (Corporate Management System)
+## How to run:
+- We have built this application on IntelliJ IDEA IDE. 
+    - To run this application, you need to have JavaFX installed on your system. You can download it from [here](https://gluonhq.com/products/javafx/). 
+    - After installing JavaFX, you need to add it to your project. 
+- We have used mysql database for this project. 
+    - You need to install mysql on your system. You can download it from [here](https://dev.mysql.com/downloads/mysql/).
+    - After installing mysql, you need to create a database named `corp` and then import the [`corp.sql`](src/main/java/com/example/sdacorp/mysql.sql) file in it. 
+    - After importing the database, you need to change the username and password in the `DatabaseConnection.java` file.
 
 ## Objective:
 This project aims to improve the efficiency and productivity of employee management in a
